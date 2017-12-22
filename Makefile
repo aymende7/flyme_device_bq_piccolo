@@ -54,7 +54,10 @@ vendor_remove_files := etc/permissions/org.cyanogenmod.livedisplay.xml
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService CMSettingsProvider HTMLViewer KeyChain NfcNci PicoTts PrintSpooler Stk UserDictionaryProvider BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell telresources
+vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService CMSettingsProvider HTMLViewer \
+                     KeyChain NfcNci PicoTts PrintSpooler Stk UserDictionaryProvider \
+                     BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider \
+                     FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell telresources
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -129,7 +132,6 @@ vendor_modify_jars := framework services telephony-common wifi-service org.cyano
 # You should configure the property according to your device.
 override_property += \
     qemu.hw.mainkeys=1
-
 
 # The value of the property ro.flyme.romer will be contained in the ota package name.
 # The default value is Unofficial.
