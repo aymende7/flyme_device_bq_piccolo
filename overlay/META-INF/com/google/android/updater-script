@@ -1,0 +1,8 @@
+ui_print("Target: bq/Aquaris_M5/Aquaris_M5:6.0.1/MOB31Y/builder.20171220150805_R:userdebug/test-keys");
+show_progress(0.750000, 0);
+ui_print("Patching system image unconditionally...");
+block_image_update("/dev/block/bootdevice/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat"); ||
+  abort("E1001: Failed to update system image.");
+show_progress(0.050000, 5);
+package_extract_file("boot.img", "/dev/block/bootdevice/by-name/boot");
+show_progress(0.200000, 10);
