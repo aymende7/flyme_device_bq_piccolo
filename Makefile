@@ -47,17 +47,14 @@ vendor_modify_images := boot
 # The default value is nothing.
 # You can configure the file name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-vendor_remove_files := etc/permissions/org.cyanogenmod.livedisplay.xml
+#vendor_remove_files := bin/zchgd
 
 ##############################################################################
 # The value decides the vendor apk which you want to save in the vendor directory for the ota package.
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService CMSettingsProvider HTMLViewer \
-                     KeyChain NfcNci PicoTts PrintSpooler Stk UserDictionaryProvider \
-                     BackupRestoreConfirmation DefaultContainerService ExternalStorageProvider \
-                     FMRadio FusedLocation InputDevices ProxyHandler SharedStorageBackup Shell telresources
+vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService BookmarkProvider EasterEgg ExtShared HTMLViewer KeyChain NfcNci PacProcessor PrintRecommendationService PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager Tag WallpaperCropper
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -75,7 +72,7 @@ vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService CMSettingsProvi
 # You need to decode android.policy.jar to the project directory (use apktool d android.policy.jar) first,
 # and then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := framework services telephony-common wifi-service org.cyanogenmod.platform
+vendor_modify_jars := framework services telephony-common wifi-service
 
 ##############################################################################
 # The value decides which board system directory you want to save.
@@ -132,6 +129,7 @@ vendor_modify_jars := framework services telephony-common wifi-service org.cyano
 # You should configure the property according to your device.
 override_property += \
     qemu.hw.mainkeys=1
+
 
 # The value of the property ro.flyme.romer will be contained in the ota package name.
 # The default value is Unofficial.
@@ -190,5 +188,11 @@ PRODUCE_INTERNATIONAL_ROM := true
 # Default: true
 #-----------------------------------------------------------------------------
 #PRODUCE_SEPOLICY_INJECT := false
+
+##############################################################################
+# Defines whether device is A/B System.
+# Default: false
+#-----------------------------------------------------------------------------
+#PRODUCE_IS_AB_UPDATE := true
 
 include $(PORT_BUILD)/main.mk
