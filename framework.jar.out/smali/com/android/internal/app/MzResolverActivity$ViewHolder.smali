@@ -26,11 +26,11 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1701
+    .line 1698
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1702
-    const v0, 0x1020014
+    .line 1699
+    const v0, #android:id@text1#t
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -40,8 +40,8 @@
 
     iput-object v0, p0, Lcom/android/internal/app/MzResolverActivity$ViewHolder;->text:Landroid/widget/TextView;
 
-    .line 1703
-    const v0, 0x1020006
+    .line 1700
+    const v0, #android:id@icon#t
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -51,6 +51,6 @@
 
     iput-object v0, p0, Lcom/android/internal/app/MzResolverActivity$ViewHolder;->icon:Landroid/widget/ImageView;
 
-    .line 1701
+    .line 1698
     return-void
 .end method
