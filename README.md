@@ -23,7 +23,7 @@ git clone https://github.com/aymende7/flyme_devices_piccolo -b nougat-7.1_caf de
 ```bash
 . build/envsetup.sh  
 
-cd devices/piccolo
+cpiccolo
 
 flyme fullota
 ```
