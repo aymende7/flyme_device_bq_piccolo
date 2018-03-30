@@ -47,14 +47,23 @@ vendor_modify_images := boot
 # The default value is nothing.
 # You can configure the file name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-#vendor_remove_files := bin/zchgd
+vendor_remove_files := etc/permissions/org.cyanogenmod.livedisplay.xml
 
 ##############################################################################
 # The value decides the vendor apk which you want to save in the vendor directory for the ota package.
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/priv-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService BookmarkProvider EasterEgg ExtShared HTMLViewer KeyChain NfcNci PacProcessor PrintRecommendationService PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup Shell StatementService StorageManager Tag WallpaperCropper
+# vendor/system/app:
+vendor_saved_apps := AntHalService Bluetooth BluetoothExt BluetoothMidiService BookmarkProvider EasterEgg \
+                     ExtShared HTMLViewer KeyChain NfcNci PacProcessor PrintRecommendationService \
+					 PrintSpooler Stk UserDictionaryProvider WAPPushManager WallpaperBackup
+
+# vendor/system/priv-app:
+vendor_saved_apps += BackupRestoreConfirmation BlockedNumberProvider CarrierConfig CellBroadcastReceiver \
+                     CMSettingsProvider DefaultContainerService EmergencyInfo ExternalStorageProvider FMRadio FusedLocation \
+                     InputDevices ManagedProvisioning MtpDocumentsProvider ProxyHandler SharedStorageBackup \
+                     Shell StatementService StorageManager Tag WallpaperCropper
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
